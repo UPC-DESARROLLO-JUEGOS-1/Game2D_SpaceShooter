@@ -16,6 +16,8 @@ public:
 		delete mMainGame;
 	}
 
+	GSpaceshipMain* GetMainGame() { return mMainGame; }
+
 	void Initialize();
 	void AddPlayerBullet(std::string path,
 		int x, int y, float speed);

@@ -37,5 +37,6 @@ protected:
 	GSBulletManager* mManager;
 
 	bool virtual IsOnScreen();
+	void CheckCollision() {}
 };
 

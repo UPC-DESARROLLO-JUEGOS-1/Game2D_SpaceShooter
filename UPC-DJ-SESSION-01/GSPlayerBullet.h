@@ -12,5 +12,8 @@ public:
 
 	void Initialize(GSBulletManager* manager, const std::string path,
 		int x, int y, float speed);
+
+protected:
+	void CheckCollision();
 };
 

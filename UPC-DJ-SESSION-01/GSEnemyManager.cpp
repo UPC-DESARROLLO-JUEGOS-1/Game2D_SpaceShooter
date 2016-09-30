@@ -30,6 +30,30 @@ void GSEnemyManager::AddEnemy(int x, int y)
 	mEnemies.push_back(enemy);
 }
 
+GSBaseEnemy* GSEnemyManager::SomeoneCollidedWith(GSActor * actor)
+{
+	GSBaseEnemy* result = nullptr;
+
+	std::list<GSBaseEnemy*>::iterator i = mEnemies.begin();
+	while (i != mEnemies.end())
+	{
+		GSBaseEnemy* enemy = (*i);
+
+		if (!enemy->IsDeleted) {
+			bool collided = enemy->HitTest(actor);
+
+			if (collided) {
+				result = enemy;
+				break;
+			}
+		}
+
+		++i;
+	}
+
+	return result;
+}
+
 void GSEnemyManager::Update(float dt)
 {
 	mTimeInterval.Update(dt);

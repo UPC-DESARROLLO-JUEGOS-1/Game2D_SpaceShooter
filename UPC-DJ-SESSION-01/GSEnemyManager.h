@@ -17,8 +17,8 @@ public:
 	}
 
 	void Initialize();
-	void OnEndLoop_Interval();
 	void AddEnemy(int x, int y);
+	GSBaseEnemy* SomeoneCollidedWith(GSActor* actor);
 
 	void Update(float dt);
 	void Draw(float dt);
@@ -28,4 +28,6 @@ private:
 
 	GSpaceshipMain* mMainGame;
 	std::list<GSBaseEnemy*> mEnemies;
+
+	void OnEndLoop_Interval();
 };

@@ -2,6 +2,8 @@
 #include "GSPlayerBullet.h"
 #include "GSEnemyBullet.h"
 
+#include <iostream>
+
 void GSBulletManager::Initialize()
 {
 }
@@ -28,7 +30,8 @@ void GSBulletManager::Update(float dt)
 		}
 		else {
 			// destruir el objecto bullet::: investigar como!!!!
-			i = mBullets.erase(i);
+ 			i = mBullets.erase(i);
+			std::cout << "erase bullet";
 		}
 	}
 }

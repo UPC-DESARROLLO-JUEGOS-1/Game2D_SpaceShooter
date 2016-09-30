@@ -53,6 +53,8 @@ void GSBaseBullet::Update(float dt)
 	mSprite->Update(dt);
 
 	this->IsDeleted = !IsOnScreen();
+
+	CheckCollision();
 }
 
 void GSBaseBullet::Draw(float dt) {
